@@ -11,7 +11,8 @@ RUN echo http://nl.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories 
     cd /opt && rm -rf fftw-2.1.5 && \        
     wget https://github.com/emmt/Yeti/archive/master.zip && \
     unzip master.zip && rm master.zip && cd Yeti-master &&\
-    make && make install && cd /opt && rm -rf Yeti-master &&\
+    ./configure --with-fftw=yes  --with-regex=yes --with-tiff=yes && \
+    make all && make install && cd /opt && rm -rf Yeti-master &&\
     cd /opt/yorick/i-start && ln -s ../i0/yeti.i yeti.i && \
     apk del make wget build-base zip 
 
