@@ -5,7 +5,7 @@ MAINTAINER Ferréol Soulez <ferreol.soulez@univ-lyon1.fr>
 RUN echo http://nl.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories && \
     apk add --update  --no-cache make wget build-base zip rlwrap gsl tiff-dev &&\
     mkdir -p /opt && cd /opt && \
-    http://www.fftw.org/fftw-2.1.5.tar.gz && tar -xvzf fftw-2.1.5.tar.gz &&\
+    wget http://www.fftw.org/fftw-2.1.5.tar.gz && tar -xvzf fftw-2.1.5.tar.gz &&\
     rm fftw-2.1.5.tar.gz && cd fftw-2.1.5/ && \
     ./configure --with-openmp --enable-shared && make && make install && \
     cd /opt && rm -rf fftw-2.1.5 && \        
