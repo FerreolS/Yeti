@@ -3,7 +3,7 @@ FROM ferreol/yorick
 MAINTAINER Ferréol Soulez <ferreol.soulez@univ-lyon1.fr>
 
 RUN echo http://nl.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories && \
-    apk add --update --no-cache --virtual .build-deps make wget build-base zip 
+    apk add --update --no-cache --virtual .build-deps make wget build-base zip && \
     apk add --update  --no-cache  tiff-dev &&\
     mkdir -p /opt && cd /opt && \      
     wget https://github.com/emmt/Yeti/archive/master.zip && \
