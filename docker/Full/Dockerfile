@@ -7,7 +7,7 @@ RUN echo http://nl.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories 
     apk add --update  --no-cache  tiff-dev fftw-dev gsl-dev && \
     mkdir -p /opt && cd /opt && \
     wget  http://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/cfitsio_latest.tar.gz &&\
-    tar -xvzf cfitsio_latest.tar.gz && rm cfitsio_latest.tar.gz && cd cfitsio && \
+    tar -xvzf cfitsio_latest.tar.gz && rm cfitsio_latest.tar.gz && mv cfitsio* cfitsio && cd cfitsio && \
     ./configure --prefix=/usr/local && make && make install && \
     cd .. && rm -rf cfitsio && \
     wget https://github.com/emmt/XFFT/archive/master.zip && \
